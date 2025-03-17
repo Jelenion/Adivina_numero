@@ -1,6 +1,9 @@
 <?php
 include_once 'adivina.php';
 $jugar = true;
+$nivel = null;
+$numero = null;
+$opc = null;
 # Mensaje de bienvenida
 echo "Bienvenido al juego Adivina el número\n";
 echo "Adivina el número con las oportunidades que ofrece cada nivel";
