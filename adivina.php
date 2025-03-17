@@ -1,6 +1,4 @@
 <?php
-# Mensaje de bienvenida
-echo "Bienvenido al juego Adivina el número\n";
 # Seleccionar numero al azar
 function num_random(){
     $numero = rand(1,100); // Dar numero aleatorio entre el 1 y el 100
@@ -27,16 +25,39 @@ function compraborar_valor($opcion, $numero){
     }
 }
 # Mostrar mensaje final de partida
-function mensaje_final($intento, $numero){
-    if($intento==0){
+function mensaje_final($intento, $numero, $valor){
+    if($valor){
+        echo "Conseguiste adivinar el número: " + $numero + "en el intento: " + $intento + "\n";
+        echo "Felicidades :)";
+    } else {
         echo "Lo siento no lograste adivinar el número: " + $numero;
         echo "Intentalo la proxima vez :(";
-    } else {
-        echo "Conseguiste adivinar el número: " + $numero;
-        echo "Felicidades :)"; 
     }
 }
-#
+# Validar numero
+function validar($numero, $rangoA, $rangoB){
+    $numero = trim(fgets(STDIN)); // eliminar espacios
+    $numero = strip_tags($numero); // eliminar codigo html inyectado
+    if(ctype_digit($numero)){ // validar que solo hay numeros
+        if($numero>=$rangoA && $numero<=$rangoB){
+            return $numero; // validar que solo hay numeros validos
+        } else {
+            echo "Por favor solo ingrese números válidos\n";
+            return false;
+        }
+    } else {
+        echo "Por favor solo ingrese números\n";
+        return false;
+    }
+}
 
+# Consejo
+function consejo($A, $B){
+    if($A>$B){
+        echo "\n\nEl número que ingresaste fue muy alto";
+    } else {
+        echo "\n\nEl número que ingresaste fue muy bajo";
+    }
+}
 
 ?>
