@@ -27,10 +27,10 @@ function compraborar_valor($opcion, $numero){
 # Mostrar mensaje final de partida
 function mensaje_final($intento, $numero, $valor){
     if($valor){
-        echo "Conseguiste adivinar el número: " + $numero + "en el intento: " + $intento + "\n";
+        echo "Conseguiste adivinar el número: " . $numero . "en el intento: " . $intento . "\n";
         echo "Felicidades :)";
     } else {
-        echo "Lo siento no lograste adivinar el número: " + $numero;
+        echo "Lo siento no lograste adivinar el número: " . $numero;
         echo "Intentalo la proxima vez :(";
     }
 }
@@ -54,9 +54,9 @@ function validar($numero, $rangoA, $rangoB){
 # Consejo
 function consejo($A, $B){
     if($A>$B){
-        echo "\n\nEl número que ingresaste fue muy alto";
+        echo "\n\nEl número que ingresaste fue muy alto ";
     } else {
-        echo "\n\nEl número que ingresaste fue muy bajo";
+        echo "\n\nEl número que ingresaste fue muy bajo ";
     }
 }
 

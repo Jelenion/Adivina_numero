@@ -19,7 +19,7 @@ do{
     $num_intentos = nivel($nivel);
     $random = num_random();
     echo "El juego inicia ahora\n";
-    for($i=1; $i==$num_intentos; $i++){
+    for($i=1; $i<=$num_intentos; $i++){
         while(true){
             echo "Ingresa el número que estoy pensando (es del 1 al 100): ";
             echo "NUMERO: ";
@@ -33,7 +33,7 @@ do{
         }
         consejo($numero, $random);
         if($i==$num_intentos){
-            mensaje_final($i, $random, false);
+            mensaje_final($i, $random, $es_igual);
         }
     }
     echo "\n\nEl juego ha terminado";
